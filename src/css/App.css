@@ -1,0 +1,6 @@
+@import url('./bootstrap-grid.min.css');
+@import url('./bootstrap-reboot.min.css');
+
+body {
+	background-color: #F6F7F6;
+}
