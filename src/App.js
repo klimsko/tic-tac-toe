@@ -16,8 +16,8 @@ const App = () => {
     <Router>
       <div className="container">
         <ul>
-          <li><NavLink exact to="/" activeStyle={{fontWeight: 'bold'}} >Logowanie</NavLink></li>
-          <li><NavLink to="/rooms" activeStyle={{fontWeight: 'bold'}} >Pokoje</NavLink></li>
+          <li><NavLink exact to="/" activeStyle={{fontWeight: 'bold'}} >Login</NavLink></li>
+          <li><NavLink to="/rooms" activeStyle={{fontWeight: 'bold'}} >Rooms</NavLink></li>
         </ul>
         <Switch>
           <Route path="/rooms" component={Rooms} />

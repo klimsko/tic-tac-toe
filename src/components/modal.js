@@ -27,12 +27,12 @@ export default class Modal extends Component {
     return (
       <div>
         <Dialog
-          title="Dialog With Actions"
+          title="Game is over"
           actions={actions}
           modal={true}
           open={this.state.open}
         >
-          Only actions can close this dialog.
+          Click 'Back to rooms' button to return to the rooms
         </Dialog>
       </div>
     );

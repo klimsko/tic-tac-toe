@@ -109,16 +109,20 @@ class Rooms extends Component {
 			<div>
 	    	<FlatButton label="Add new room" 
 	    		onClick={this.newGame}
+	    		backgroundColor={'#9CC842'}
+	    		hoverColor={'#6cf875'}
 	    	/>
-		    {rooms.length > 0 ? rooms.map(room => 
-		     	<Room 
-		     		key={room.id} 
-		     		id={room.id} 
-		     		players={room.players} 
-		     		leaveRoom={this.leaveRoom}
-		     		joinRoom={this.joinRoom}
-		     		startGame={this.startGame}
-		     	/>) : null}
+	    	<div className="row">
+			    {rooms.length > 0 ? rooms.map(room => 
+			     	<Room 
+			     		key={room.id} 
+			     		id={room.id} 
+			     		players={room.players} 
+			     		leaveRoom={this.leaveRoom}
+			     		joinRoom={this.joinRoom}
+			     		startGame={this.startGame}
+			     	/>) : null}
+		    </div>
 			</div>
 		)
 	}
