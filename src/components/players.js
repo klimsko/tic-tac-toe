@@ -10,7 +10,6 @@ const style = {
 };
 
 const Players = (props) => {
-	console.log('players', props.players);
 	return (
 		<Paper style={style} zDepth={1} rounded={false}>
 			{props.players.map((pl) => 

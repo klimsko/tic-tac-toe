@@ -25,7 +25,6 @@ class Login extends Component {
 
 	registerUser = () => {
 		const data = this.state;
-		console.log(data);
 
 		fetch(url + 'user/register/', {
 			method: 'POST', 
@@ -40,13 +39,12 @@ class Login extends Component {
 				}
 				return response.json();
 			})
-			.then(info => console.log(info)
+			.then(() => {}
 			);
 	}
 
 	logIn = () => {
 		const data = this.state;
-		console.log(data);
 
 		fetch(url + 'user/login/', {
 			method: 'POST', 
@@ -61,7 +59,7 @@ class Login extends Component {
 				}
 				return response.json();
 			})
-			.then(info => console.log(info)
+			.then(() => {}
 			);
 	}
 

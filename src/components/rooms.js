@@ -112,7 +112,7 @@ class Rooms extends Component {
 	}
 
 	render() {
-		const rooms = this.state.rooms; console.log(rooms);
+		const rooms = this.state.rooms;
 		return (
 			<div>
 	    	<FlatButton label="Add new room" 
