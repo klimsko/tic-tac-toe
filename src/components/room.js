@@ -14,10 +14,10 @@ const style = {
 const Room = (props) => {
 	return (
 		<Paper style={style} zDepth={1} rounded={false} >
-			{props.players.map(pl => {
+			{props.players.map((pl, index) => {
 				return (
-					<div key={pl.id}>
-						Name: {pl.name}
+					<div style={{fontWeight: 'bold'}} key={pl.id}>
+						Player {index+1}: {pl.name}
 					</div>
 				)
 			})}

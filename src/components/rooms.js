@@ -15,11 +15,17 @@ class Rooms extends Component {
 	}
 	
 	componentDidMount() {
-		this.getRoomList('GET');
+		this.interval = setInterval(() => this.getRoomList(), 3000);
 	}
 
+	componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
 	getRoomList = (method) => {
-		fetch(url + 'games/', {
+		if (!method) method = 'GET';
+
+		fetch(`${url}games/?status=waiting`, {
 			method: method, 
 		  mode: 'cors',
 		  credentials: 'include',
@@ -39,6 +45,7 @@ class Rooms extends Component {
 		fetch(url + 'games/', {
 			method: 'POST', 
 		  mode: 'cors',
+		  body: {},
 		  credentials: 'include',
 		  headers: headers,
 		})
@@ -48,7 +55,7 @@ class Rooms extends Component {
 				}
 				return response.json();
 			})
-			.then(rooms => this.setState({ rooms })
+			.then(() => this.getRoomList('GET')
 			);
 	}
 
@@ -84,6 +91,7 @@ class Rooms extends Component {
 			})
 			.then(() => this.getRoomList('GET')
 			);
+
 	}
 
 	startGame = (id) => {
@@ -104,7 +112,7 @@ class Rooms extends Component {
 	}
 
 	render() {
-		const rooms = this.state.rooms;
+		const rooms = this.state.rooms; console.log(rooms);
 		return (
 			<div>
 	    	<FlatButton label="Add new room" 
